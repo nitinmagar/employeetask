@@ -1,0 +1,26 @@
+<h2 style="background-color: red; border-radius: 5px; color: white;text-align: center; ">View Employee List</h2>
+<table class="table">
+   
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th>Employee Age</th>
+        <th>Prifile Img</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of apiResponse">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.sal }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.address }}</td>
+        <td><button class="btn btn-danger" (click)="deleteUser(item._id)">Delete</button> 
+        <button class="btn btn-success" (click)="updateUser(item._id)" style="margin-left: 5px;">Update</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
